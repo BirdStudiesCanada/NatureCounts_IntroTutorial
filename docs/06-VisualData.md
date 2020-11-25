@@ -4,7 +4,7 @@
 
 You have successfully downloaded and summarised your NatureCounts dataset. In this chapter we will demonstrate how to do some basic visualizations with plots. 
 
-> The code in this Chapter will not work unless you replace `"YourUserName"` with your actual user name. You will be prompted to enter your password. 
+> The code in this Chapter will not work unless you replace `"testuser"` with your actual user name. You will be prompted to enter your password. 
 
 ## Plotting {#PM6.1}
 
@@ -20,7 +20,7 @@ library(naturecounts)
 library(tidyverse)
 
 VLBO <- nc_data_dl(collections = "CMMN-DET-VLBO", years = c(2015, NA), 
-                   username = "YourUserName", info = "tutorial example")
+                   username = "testuser", info = "tutorial example")
 
 GRCA <- format_zero_fill(VLBO, species = 15900, 
                          by = "SamplingEventIdentifier", 
@@ -44,7 +44,7 @@ ggplot(data = GRCA_dates) +
 
 <img src="06-VisualData_files/figure-html/plot1VLBO-1.png" width="672" />
 
-What you will notice is that there isn't an obvious peak in migration for this species, but a relatively constant number of individuals counted throughout the season. 
+What you will notice is that migration for this species is highest early in the year and diminishes with time. 
 
 Next, we are interested in visually examining the mean number of migrant GRCA each year, to see if there are any noticeable changes over time. First, we need to summarise the data: 
 
@@ -60,6 +60,10 @@ GRCA_year <- GRCA %>%
   mutate(yrmin = MeanObs + SEObs, yrmax = MeanObs - SEObs)
 ```
 
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
 Now we can create the plot: 
 
 
@@ -70,7 +74,7 @@ ggplot(data = GRCA_year) +
 
 <img src="06-VisualData_files/figure-html/plot2VLBO-1.png" width="672" />
 
-You will notice there was a increase in the mean number of GRCA observed in th last years. You might now be wondering why.  
+You will notice there was an increase in the mean number of GRCA observed in the last three years. You might now be wondering why.  
 
 ## Mapping {#PM6.2}
 

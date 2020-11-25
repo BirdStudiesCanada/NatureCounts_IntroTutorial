@@ -4,7 +4,7 @@
 
 This chapter begins with a brief introduction to the structure of the NatureCounts database, followed by a description of access levels and how to create a user account. We then provide instructions on how to view data from various collections and apply filters. 
 
-> The code in this Chapter will not work unless you replace `"YourUserName"` with your actual user name. You will be prompted to enter your password.
+> The code in this Chapter will not work unless you replace `"testuser"` with your actual user name. You will be prompted to enter your password.
 
 ## Data Structure {#Data3.1}
 
@@ -16,7 +16,7 @@ By default, the naturecounts package downloads the data with the *minimum* set o
 
 ## Levels of Data Access {#Data3.2}
 
-NatureCounts hosts many datasets, representing in excess of 140 million occurrence records, with a primary focus on Canadian bird monitoring data. Many of those datasets are from projects lead by Birds Canada and/or its partners. While we thrive to make our data as openly available as possible, we also need to recognize the needs of our partners and funders.
+NatureCounts hosts many datasets, representing in excess of 140 million occurrence records, with a primary focus on Canadian bird monitoring data. Many of those datasets are from projects lead by Birds Canada and/or its partners. While we strive to make our data as openly available as possible, we also need to recognize the needs of our partners and funders.
 
 NatureCounts has five [Levels of Data Access](https://www.birdscanada.org/birdmon/default/nc_access_levels.jsp), which define how each dataset can be used. Those levels are set individually for each dataset, in consultation with the various partners and data custodians involved.
 
@@ -62,7 +62,7 @@ Or you can view the collections for which you have access using your username/pa
 
 
 ```r
-nc_count(username = "YourUserName")
+nc_count(username = "testuser")
 ```
 
 Further refinements can be applied to the `nc_count()` function using [filters](#Download4)  Options include: `collections`, `project_id`, `species`, `years`, `doy` (day-of-year), `region`, and `site_type`. 
